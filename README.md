@@ -125,7 +125,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. **Clone the Repository**
 
-git clone https://github.com/yourusername/personal-finance-manager-api.git
+git clone https://github.com/darwin757/personal_finance_manager.git
 cd personal-finance-manager-api
 
 r
@@ -181,11 +181,11 @@ The API will be available at `http://127.0.0.1:5000/`.
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](Coming soon) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md] https://github.com/darwin757/personal_finance_manager/blob/main/CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](Coming soon) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md] https://github.com/darwin757/personal_finance_manager/blob/main/LICENSE.md file for details.
 
 
 
