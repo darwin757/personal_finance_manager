@@ -24,6 +24,6 @@ def create_app(config_name='default'):
 
     # Register the blueprints
     app.register_blueprint(auth_blueprint, url_prefix='/auth')
-    app.register_blueprint(account_blueprint, url_prefix='/account')
+    app.register_blueprint(account_blueprint, url_prefix='/')
 
     return app
