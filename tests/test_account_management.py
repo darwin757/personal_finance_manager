@@ -19,6 +19,7 @@ class AccountManagementTestCase(unittest.TestCase):
         db.session.add(self.user)
         db.session.commit()
 
+
         # Generate a test JWT token for the user
         self.token = create_access_token(identity=self.user.id)
 
