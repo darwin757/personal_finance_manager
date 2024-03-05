@@ -9,6 +9,10 @@ migrate = Migrate()
 
 db = SQLAlchemy()
 migrate = Migrate()
+from flask_jwt_extended import JWTManager
+from app.routes.routes import auth_blueprint
+from app.routes.account_routes import account_blueprint
+
 jwt = JWTManager()
 def create_app(config_name='default'):
     app = Flask(__name__)
@@ -18,8 +22,8 @@ def create_app(config_name='default'):
     migrate.init_app(app, db)
     jwt.init_app(app)
 
-    # Register the blueprint 
-    from app.routes import auth_blueprint
+    # Register the blueprints
     app.register_blueprint(auth_blueprint, url_prefix='/auth')
+    app.register_blueprint(account_blueprint, url_prefix='/')
 
     return app
