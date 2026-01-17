@@ -8,5 +8,8 @@ class Account(db.Model):
     account_type = db.Column(db.String(120), nullable=False)
     balance = db.Column(db.Float, nullable=False, default=0.0)
 
+    # Relationships
+    transactions = db.relationship('Transaction', backref='account', lazy='dynamic')
+
     def __repr__(self):
         return f'<Account {self.name}, Type: {self.account_type}, Balance: {self.balance}>'

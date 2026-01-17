@@ -12,6 +12,7 @@ migrate = Migrate()
 from flask_jwt_extended import JWTManager
 from app.routes.routes import auth_blueprint
 from app.routes.account_routes import account_blueprint
+from app.routes.transaction_routes import transaction_blueprint
 
 jwt = JWTManager()
 def create_app(config_name='default'):
@@ -25,5 +26,6 @@ def create_app(config_name='default'):
     # Register the blueprints
     app.register_blueprint(auth_blueprint, url_prefix='/auth')
     app.register_blueprint(account_blueprint, url_prefix='/')
+    app.register_blueprint(transaction_blueprint, url_prefix='/')
 
     return app

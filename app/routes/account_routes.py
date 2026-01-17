@@ -50,3 +50,19 @@ def delete_account(account_id):
         return jsonify({'message': 'Account deleted successfully.'}), 204
     return jsonify({'message': 'Account not found'}), 404
 
+@account_blueprint.route('/accounts', methods=['GET'])
+@jwt_required()
+def list_accounts():
+    user_id = get_jwt_identity()
+    accounts = Account.query.filter_by(user_id=user_id).all()
+    return jsonify({
+        'accounts': [
+            {
+                'id': account.id,
+                'name': account.name,
+                'account_type': account.account_type,
+                'balance': account.balance
+            } for account in accounts
+        ]
+    }), 200
+
